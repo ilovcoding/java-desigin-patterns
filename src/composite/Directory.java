@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public class Directory extends  Entry{
     private String name;
-    private ArrayList dirctory = new ArrayList();
+    private final ArrayList directory = new ArrayList();
 
     public Directory(String name) {
         this.name = name;
@@ -13,7 +13,7 @@ public class Directory extends  Entry{
 
     @Override
     public Entry add(Entry entry) throws FileTreatMentException {
-        dirctory.add(entry);
+        directory.add(entry);
         return this;
     }
 
@@ -25,7 +25,7 @@ public class Directory extends  Entry{
     @Override
     public int getSize() {
         int size = 0;
-        Iterator it = dirctory.iterator();
+        Iterator it = directory.iterator();
         while (it.hasNext()){
             Entry entry = (Entry) it.next();
             size += entry.getSize();
@@ -36,7 +36,7 @@ public class Directory extends  Entry{
     @Override
     protected void printList(String prefix) {
         System.out.println(prefix + "/" + this);
-        Iterator it = dirctory.iterator();
+        Iterator it = directory.iterator();
         while (it.hasNext()){
             Entry entry = (Entry) it.next();
             entry.printList(prefix+"/"+name);
