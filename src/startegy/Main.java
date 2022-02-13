@@ -10,7 +10,7 @@ public class Main {
         System.out.println("seed2= "+ seed2);
         Player player1 = new Player("T", new WinningStrategy(seed1));
         Player player2 = new Player("H",new ProStrategy(seed2));
-        for (int i = 0; i < 1000000; i++) {
+        for (int i = 0; i < 1000; i++) {
             Hand nextHand1 = player1.nextHand();
             Hand nextHand2 = player2.nextHand();
             if(nextHand1.isStrongerThan(nextHand2)){
