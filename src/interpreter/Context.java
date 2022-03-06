@@ -8,7 +8,6 @@ public class Context {
 
     public Context(String text) {
         tokenizer = new StringTokenizer(text);
-        System.out.println(tokenizer);
         nextToken();
     }
 
