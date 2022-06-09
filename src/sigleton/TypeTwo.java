@@ -1,13 +1,19 @@
 package sigleton;
 
+// 懒汉式静态代码快
 public class TypeTwo {
-    private static TypeTwo instance;
-
-    public static TypeTwo getInstance() {
-        if(instance == null){
-            instance = new TypeTwo();
-        }
-        return instance;
+    private  final static  TypeTwo INSTANCE;
+    static {
+        INSTANCE = new TypeTwo();
     }
-    public  Integer a = 2;
+    private TypeTwo(){}
+    public static TypeTwo getInstance() {
+        return INSTANCE;
+    }
+
+    public static void main(String[] args) {
+        TypeTwo t1 = TypeTwo.getInstance();
+        TypeTwo t2 = TypeTwo.getInstance();
+        System.out.println(t1==t2);
+    }
 }
