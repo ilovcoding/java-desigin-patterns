@@ -5,7 +5,7 @@ package sigleton;
 public class TypeFour {
     public static TypeFour INSTANCE;
     private TypeFour(){}
-    public static synchronized TypeFour  getInstance() {
+    public static synchronized TypeFour getInstance() {
         if(INSTANCE == null){
             try {
                 Thread.sleep(1);
